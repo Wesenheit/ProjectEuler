@@ -64,3 +64,76 @@ def nwd(a, b):
         a = b
         b = c
     return a
+
+def nTyFibb(n):
+    """Zwraca n--tą liczbę Fibbonacciego"""
+    if n<=1:
+        return 1
+    f=1
+    fm1=0
+    for ii in range(1,n):
+        pom=f
+        f=fm1+f
+        fm1=pom
+    return f
+
+
+def mniejszyRownyFibb(n):
+    """Zwraca NUMER największej liczby Fibbonacciego mniejszej lub równej n"""
+    if n<=1:
+        return 0
+    numer=0
+    fibb=1
+    fibbm1=0
+    while fibb<=n:
+        pom=fibb
+        fibb=fibb+fibbm1
+        fibbm1=pom
+        numer+=1
+    return numer
+
+
+def isPrime(n):
+    """Szybko sprawdza czy liczba jest pierwsza, algorytm z 
+    https://github.com/bzglinicki/python-training/blob/main/Rozwiazania-zadan/1_Podstawy/nextPrime.py
+    """
+    if n <= 1: return False   # Te dwie instrukcje można zapisać łącznie:
+    if n <= 3: return True    #   if n <= 3: return n > 1
+    if n % 2 == 0 or n % 3 == 0: return False
+
+    i = 5
+    while i ** 2 <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+
+def nextPrime(n):
+    """Zwraca najbliższą liczbę pierwszą, większą od n"""
+    # Nie wiem jak szybko ona działa, tzn. czy nie da się szybciej
+    if (n <= 1): return 2
+
+    k = n
+    prime = False
+
+    while not prime:
+        k += 1
+        prime = isPrime(k)
+
+    return k
+
+
+def tableOfPrimes(n):
+    """Zwraca tablicę wypełnioną liczbami pierwszymi <= n"""
+    if n<=1:
+        return []
+    if n == 2: # Sprawdzam to po to, że chcę robić skok o 2 zamiast o 1, zwiększam szybkość dwukrotnie
+        return [2]
+    last = 3
+    res = [2]
+    while not last > n:
+        if isPrime(last):
+            res.append(last)
+        last += 2
+    return res
