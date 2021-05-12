@@ -28,9 +28,9 @@ class Manager:
             p = mp.Process(target=pom, args=(temp, v, self.fun))
             processes.append(p)
 
-            for p in processes:
+        for p in processes:
             p.start()
 
-            for p in processes:
+        for p in processes:
             p.join()
         return v.value
