@@ -68,7 +68,7 @@ def nwd(a, b):
 
 
 def primo(x):
-    licz == licz(x)
+    licz = sito(x)
     wyn = []
     for i in range(2, x):
         if i == licz[i]:
