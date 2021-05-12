@@ -10,7 +10,7 @@ class Manager:
         self.name = self
         self.tab = tab
         self.fun = fun
-        self.n = n = mp.cpu_count()
+        self.n = mp.cpu_count()
 
     def __call__(self):
 
