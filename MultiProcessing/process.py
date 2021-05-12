@@ -23,7 +23,7 @@ class Manager:
 
         v = mp.Value(c_longlong, 0)
         processes = []
-        for c in range(0, n):
+        for c in range(0, self.n):
             temp = [self.tab[i] for i in range(c, len(self.tab), self.n)]
             p = mp.Process(target=pom, args=(temp, v, self.fun))
             processes.append(p)
