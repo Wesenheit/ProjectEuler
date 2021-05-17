@@ -13,4 +13,5 @@ Teoria liczb:
     ext_euc(a,b)- rozszerzony algorytm euklidesa zwracający także współczynniki z tożsamości bezouta.
     chin(M,ytab,ntab)- implementacja chińskiego twierdzenia o resztach która zwraca taką liczbę x, że x mod M jest spełnieniem układu równań
 x=yi mod ni oraz iloczyn liczb z ntab daje nam M.
- 
+
+Moduł do programowania równoległego- biblioteka zawiera manager pozwalający na równoległe wykonywanie obliczeń na wielu rdzeniach procesora. Obiektowi manager przypisujemy tablicę liczb oraz funkcję która ma zostać wykonana na każdym z elementów tablicy, po wszystkim należy wywołać obiekt jako funkcję a zwróci on sumę wartości funkcji dla liczb z tablicy. 
